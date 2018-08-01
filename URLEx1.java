@@ -15,7 +15,10 @@ public class URLEx1 {
 		System.out.println("파일 : "+url.getFile()); //파일 얻기
 		
 		//openStream() -> InputStream 으로 해당 url에서 정보를 얻어 옵니다.
-		InputStream ins = url.openStream();
+		//url 클래스에 있습니다. => openConnection() -> 
+		//(URL Connection)getInputStream 두개를 호출 한 것과 같습니다.
+		//
+		InputStream ins = url.openStream(); 
 		BufferedReader br = new BufferedReader(new InputStreamReader(ins));
 		String  str = "";
 		while((str = br.readLine()) != null) {
