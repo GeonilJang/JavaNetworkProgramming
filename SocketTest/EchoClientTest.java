@@ -11,11 +11,13 @@ import java.net.UnknownHostException;
 
 public class EchoClientTest {
 	public static void main(String[] args) throws UnknownHostException, IOException {
-		String ip = "183.99.6.38";
-		int port = 7080;
 		
-		Socket sk = new Socket(ip,port);
+		//접속할 서버의 정보를 초기화 한다.
+		String ip = "183.99.6.38";
+		int port = 7080;		
+		Socket sk = new Socket(ip,port); // 서버와 접속이 되었다면 아래가 시작되고 아니면 예외가 발생한다.
 		System.out.println("서버와 접속이 되었습니다.");
+		
 		
 		
 		//서버로 부터 데이터를 입력받는 스트림.
@@ -30,13 +32,13 @@ public class EchoClientTest {
 		BufferedReader bffKey = new BufferedReader(inR);
 		
 		
-		
 		String servermsg = "",sendMsg="";
+		
+		//서버로 부터 전달되는 최조의 값을 읽어 온다.
 		servermsg = bff.readLine();
-		
-		
-		
 		System.out.println("서버메세지 : "+servermsg);
+		
+		//키보드로 부터값을 입력해서 서버쪽으로 전달한다.
 		while((sendMsg = bffKey.readLine()) != null) {
 			pout.println(sendMsg);
 			servermsg = bff.readLine();
