@@ -13,6 +13,7 @@ public class ChatServer implements Runnable{
 	int cnt=0;
 	
 	
+	
 	public ChatServer() {
 		System.out.println("Server Start");
 		String msg = "";
@@ -58,18 +59,11 @@ public class ChatServer implements Runnable{
 				clientMsg = buR.readLine();
 				System.out.println("Client > "+clientMsg);
 			}//while
-			
-			
-			
-			
-			
+				
 		} catch (IOException e) {
 
 			e.printStackTrace();
 		}
-		
-		
-		
 		
 	}
 	
